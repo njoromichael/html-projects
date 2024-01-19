@@ -1,0 +1,30 @@
+html {
+    background-color: #00539f;
+    /* color:white; */
+    font-size: 10px;
+    font-family: "Open Sans", sans-serif, 'Times New Roman', Times, serif;
+}
+body {
+    background-color: #ff9500;
+    width: 600px;
+    margin: 0px auto;
+    padding: 0px 20px 20px 20px;
+    border: 5px solid black;
+}
+h1{
+    font-size: 45px;
+    text-align: center;
+    margin: 0px;
+    padding: 20px 0px;
+    color: #00539f;
+    text-shadow: 3px 3px 1px black;
+}
+p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+img{
+    margin: 0 auto;
+    display: block;
+}

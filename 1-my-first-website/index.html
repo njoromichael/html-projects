@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width , initial-scale=1"/>
+        <meta name="author" content="=Michael"/>
+        <meta name="description" content="My first Website"/>
+        
+        <title>My First Web Page</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+        <link href="styles/style.css" rel="stylesheet"/>    
+    </head> 
+    <body>
+        <h1>Michael, welcome to Olum Code Camp</h1>
+        <p>My cat is <strong>very</strong> grumpy</p>
+        <p>Try clicking on the <em>cat</em> to see it flipping horizontally</p>
+        <img src="images/cat.jpg" alt="My beautiful cat">
+        <p>At Olum Code Camp, we're a community of</p>
+        <ul>
+            <li>technologists</li>
+            <li>thinkers</li>
+            <li>builders</li>
+            <li>working together to increase the number of programmers.</li>
+        </ul>
+        
+
+       <p>To join, you need three things:</p> 
+        <ol>
+            <li>A desire to be a computer programmer</li>
+            <li>A laptop</li>
+            <li>A monthly fee of Ksh.10,000</li>
+        </ol>
+        <a href="https://www.youtube.com/channel/UCfwXxrYHSpCXixE1AHXp81A">Subscribe and follow us on Youtube</a>
+        <p><button>change user</button></p>
+        
+
+        <script>
+            const myImage = document.querySelector("img");
+
+            myImage.onclick = () => {
+                const mySrc = myImage.getAttribute("src")
+                if (mySrc === "images/cat.jpg"){
+                    myImage.setAttribute("src", "images/cat_2.jpg")
+                } else {
+                    myImage.setAttribute("src", "images/cat.jpg")
+                }
+            }
+            const myButton = document.querySelector("button");
+            const myHeading = document.querySelector("h1");
+
+            function setUserName() {
+                let myName = prompt("Please enter your name: ").trim();
+                if (!myName){
+                    setUserName();
+                }
+                localStorage.setItem("name", myName)
+
+                if (!myName) {
+                    setUserName();
+                } else {
+                    myHeading.textContent = `${myName}, welcome to Olum Code Camp`;
+                }
+            }
+            
+            if (!localStorage.getItem("name")) {
+                setUserName();
+            } else{
+                let storeName= localStorage.getItem("name");
+                myHeading.textContent = `${storeName}, welcome to Olum code camp`;
+            }
+            myButton.onclick = () => {
+                setUserName ();
+            }
+
+        </script>
+    </body>
+</html>
